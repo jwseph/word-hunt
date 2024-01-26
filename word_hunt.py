@@ -1,3 +1,7 @@
+from time import perf_counter
+
+
+t0 = perf_counter()
 words = open('word_hunt.txt').read().split()
 
 class Trie(dict):
@@ -10,8 +14,14 @@ trie = Trie()  # {'a': {'b': {'c': {None: True}}}}
 for word in words:
     trie.insert(word)
 
+t1 = perf_counter()
+print(f'Loaded Trie in {t1-t0:.3f}s')
+
+
 R = C = 4
 A = [list(input().strip()) for r in range(R)]
+
+t0 = perf_counter()
 
 res = set()
 
@@ -33,3 +43,6 @@ for r in range(R):
 
 res = sorted(res, key=len, reverse=True)
 print(' '.join(res))
+
+t1 = perf_counter()
+print(f'Solved in {t1-t0:.3f}s')
