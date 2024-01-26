@@ -2,7 +2,7 @@
 
 Regular DFS w/ Trie, probably a LC medium
 
-`600ms` $O(n)$ Trie
+`600ms` $O(m)$ Trie
 
 `<10ms` $O(n^3 3^{n})$ DFS
 
