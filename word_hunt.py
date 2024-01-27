@@ -7,7 +7,7 @@ words = open('word_hunt.txt').read().split()
 class Trie(dict):
     def insert(t, s):
         for c in s:
-            t[c] = t = t.get(c, Trie())
+            t[c] = t = t[c] if c in t else Trie()
         t[None] = True
 
 trie = Trie()  # {'a': {'b': {'c': {None: True}}}}
